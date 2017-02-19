@@ -1,0 +1,4 @@
+---
+vagrant_version: "1.9.1"
+vagrant_arch: "x86_64"
+vagrant_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ vagrant_arch }}.deb"

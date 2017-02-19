@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Vinícius Figueiredo
+  description: Installs vagrant in Ubuntu Desktop.
+  license: MIT
+
+  platforms:
+    - name: Ubuntu
+
+  galaxy_tags:
+    - vagrant
+    - virtualization
+    - tools
+
+dependencies: []
