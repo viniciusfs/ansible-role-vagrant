@@ -1,5 +1,15 @@
 ---
-- name: Install vagrant from URL
+- name: Install pre reqs
   apt: >
-    deb={{ vagrant_url }}
+    name=python3-apt
+    state=installed
+
+- name: Download vagrant package
+  get_url: >
+    url={{ vagrant_url }}
+    dest={{ vagrant_destination }}
+
+- name: Install vagrant
+  apt: >
+    deb={{ vagrant_destination }}/vagrant_{{ vagrant_version }}_{{ vagrant_arch }}.deb
     state=installed

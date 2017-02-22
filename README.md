@@ -17,6 +17,9 @@ Installs Vagrant in Ubuntu Desktop.
     - Description: URL for installation package
     - Default: `https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ vagrant_arch }}.deb`
 
+* `vagrant_destionation`:
+    - Description: Temporary directory used to download vagrant package
+    - Default: `/tmp`
 
 ## Example Playbook
 
