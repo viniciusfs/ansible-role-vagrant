@@ -1,6 +1,6 @@
 # Ansible role: Vagrant
 
-Installs Vagrant in Ubuntu Desktop.
+Installs Vagrant in Ubuntu Desktop. :joy_cat:
 
 
 ## Role Variables
