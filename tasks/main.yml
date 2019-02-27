@@ -1,15 +1,29 @@
 ---
-- name: Install pre reqs
-  apt: >
-    name=python3-apt
-    state=installed
+- name: install unzip
+  package:
+    name: unzip
+    state: present
 
-- name: Download vagrant package
-  get_url: >
-    url={{ vagrant_url }}
-    dest={{ vagrant_destination }}
+- name: get vagrant download page
+  get_url:
+    url: "{{ vagrant_download_page }}"
+    dest: "{{ vagrant_temp_dir }}/vagrant_download_page.html"
+  when: vagrant_version == "latest"
 
-- name: Install vagrant
-  apt: >
-    deb={{ vagrant_destination }}/vagrant_{{ vagrant_version }}_{{ vagrant_arch }}.deb
-    state=installed
+- name: detect vagrant latest version from download page
+  command:
+    egrep -o "Vagrant ([0-9]{1,}\.)+[0-9]{1,}" {{ vagrant_temp_dir }}/vagrant_download_page.html
+  args:
+    chdir: "{{ vagrant_temp_dir }}"
+  register: output_grep
+  when: vagrant_version == "latest"
+
+- name: set vagrant_version variable
+  set_fact: vagrant_version={{ output_grep.stdout.split()[1] }}
+  when: vagrant_version == "latest"
+
+- name: download and install vagrant
+  unarchive:
+    src: "{{ vagrant_download_url }}"
+    dest: "{{ vagrant_install_dir }}"
+    remote_src: true

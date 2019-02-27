@@ -1,31 +1,28 @@
 # Ansible role: Vagrant
 
-Installs Vagrant in Ubuntu Desktop. :joy_cat:
+Installs Vagrant on Linux systems. :joy_cat:
 
 
 ## Role Variables
 
 * `vagrant_version`:
     - Description: Vagrant version to install
-    - Default: `1.9.1`
+    - Default: `latest`
 
-* `vagrant_arch`:
-    - Description: System arch to install
-    - Default: `x86_64`
+* `vagrant_install_dir`:
+    - Description: Destination directory for Vagrant binary file
+    - Default: `/usr/local/bin`
 
-* `vagrant_url`:
-    - Description: URL for installation package
-    - Default: `https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ vagrant_arch }}.deb`
-
-* `vagrant_destionation`:
-    - Description: Temporary directory used to download vagrant package
+* `vagrant_temp_dir`:
+    - Description: Temporary directory used to download vagrant page for scraping
     - Default: `/tmp`
+
 
 ## Example Playbook
 
     - hosts: workstations
       roles:
-        - { role: viniciusfs.vagrant }
+        - name: viniciusfs.vagrant
 
 
 ## License
