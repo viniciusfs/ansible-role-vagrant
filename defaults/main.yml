@@ -1,5 +1,6 @@
 ---
-vagrant_version: "1.9.1"
-vagrant_arch: "x86_64"
-vagrant_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ vagrant_arch }}.deb"
-vagrant_destination: "/tmp"
+vagrant_version: "latest"
+vagrant_download_page: "https://www.vagrantup.com/downloads.html"
+vagrant_download_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_linux_amd64.zip"
+vagrant_temp_dir: /tmp
+vagrant_install_dir: /usr/local/bin

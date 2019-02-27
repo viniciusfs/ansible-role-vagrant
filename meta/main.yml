@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vinícius Figueiredo
-  description: Installs vagrant in Ubuntu Desktop.
+  description: Installs Vagrant on Linux systems
   license: MIT
 
   platforms:
