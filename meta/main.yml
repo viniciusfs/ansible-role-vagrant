@@ -5,7 +5,13 @@ galaxy_info:
   license: MIT
 
   platforms:
-    - name: Ubuntu
+    - name: EL
+      versions:
+        - 7
+    - name: GenericLinux
+      versions:
+        - all
+        - any
 
   galaxy_tags:
     - vagrant
